@@ -4,7 +4,7 @@
   "description": "Calculate monthly loan payments",
   "main": "index.js",
   "scripts": {
-    "test": "nodeunit test"
+    "test": "nodeunit test/test.js"
   },
   "repository": {
     "type": "git",
