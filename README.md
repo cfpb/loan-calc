@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ascott1/loan-calc.svg?branch=master)](https://travis-ci.org/ascott1/loan-calc)
+
 Quickly calculate monthly payments for a fixed interest loan.
 
 ## Usage
