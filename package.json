@@ -1,0 +1,27 @@
+{
+  "name": "loan-calc",
+  "version": "0.0.1",
+  "description": "Calculate monthly loan payments",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodeunit test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ascott1/loan-calc.git"
+  },
+  "keywords": [
+    "money",
+    "mortgage",
+    "loan",
+    "calculator"
+  ],
+  "author": "Adam Scott",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ascott1/loan-calc/issues"
+  },
+  "devDependencies": {
+    "nodeunit": "~0.8.6"
+  }
+}
