@@ -19,15 +19,15 @@ var roundNum = function(num) {
 
 var cleanOpts = function(opts) {
   if ( typeof opts.amount === 'undefined' || isNaN(parseFloat(opts.amount)) || opts.amount <= 0) {
-    throw new Error('Please specify a loan amount');
+    throw new Error('Please specify a loan amount as a positive number');
   }
 
   if ( typeof opts.rate === 'undefined' || isNaN(parseFloat(opts.rate)) || opts.rate < 0) {
-    throw new Error('Please specify a loan rate');
+    throw new Error('Please specify a loan rate as a number');
   }
 
   if ( typeof opts.termMonths === 'undefined' || isNaN(parseFloat(opts.termMonths)) || opts.termMonths <= 0) {
-    throw new Error('Please specify the length of the term');
+    throw new Error('Please specify the length of the term as a positive number');
   }
 
   return {

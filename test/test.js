@@ -26,17 +26,15 @@ exports['A 40 year, $200,000 loan with a 5% interest rate should have a total in
 exports['Throw an error if a string is passed'] = function (test) {
   test.throws(function() {
     LoanCalc.paymentCalc({amount: 'hello', rate: 5, termMonths: 480});
-    LoanCalc.paymentCalc({amount: 100000, rate: 'test', termMonths: 480});
-    LoanCalc.paymentCalc({amount: 200000, rate: 5, termMonths: '480'});
   },
-  Error, 'Must pass a number');
+  Error, 'Please specify a loan amount as a positive number');
   test.done();
 };
 
 exports['Throw an error if a negative value is passed'] = function (test) {
   test.throws(function() {
-    LoanCalc.paymentCalc(-300000, 5, 360);
+    LoanCalc.paymentCalc({amount: -300000, rate: 5, termMonths: 360});
   },
-  Error, 'Must pass a positive number');
+  Error, 'Please specify a loan amount as a positive number');
   test.done();
 };
