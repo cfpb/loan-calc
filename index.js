@@ -12,7 +12,7 @@ var paymentCalc = function(loanAmt, loanRate, loanTerm) {
 
 // round numbers to two decimal places
 var roundNum = function(num) {
-  return num.toFixed(2);
+  return Math.round(num * 100) / 100;
 };
 
 // pass the amount of the loan, percentage rate, and length of the loan in months
