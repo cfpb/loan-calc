@@ -2,6 +2,14 @@
 
 Quickly calculate monthly payments and the total amount of interest paid for a fixed rate loan.
 
+## Installation
+
+First install [node.js](http://nodejs.org/). Then:
+
+```sh
+npm install loan-calc --save
+```
+
 ## Usage
 
 Require the module and pass the amount of the loan, annual rate, and length of loan in months.
