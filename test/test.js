@@ -11,6 +11,11 @@ exports['A 15 year, $200,000 loan with a 5% interest rate should be repaid at $1
   test.done();
 };
 
+exports['A 15 year, $389,253 loan with a 5.3% interest rate should be repaid at $3,139.36 per month'] = function (test) {
+  test.equal(LoanCalc.paymentCalc({amount: 389253, rate: 5.3, termMonths: 180}), 3139.36);
+  test.done();
+};
+
 // test that we're calculating the correct total interest paid
 exports['A 30 year, $200,000 loan with a 5% interest rate should have a total interest of $186,511.57'] = function (test) {
   test.equal(LoanCalc.totalInterest({amount: 200000, rate: 5, termMonths: 360}), 186511.57);
@@ -19,6 +24,11 @@ exports['A 30 year, $200,000 loan with a 5% interest rate should have a total in
 
 exports['A 40 year, $200,000 loan with a 5% interest rate should have a total interest of $262,908.74'] = function (test) {
   test.equal(LoanCalc.totalInterest({amount: 200000, rate: 5, termMonths: 480}), 262908.74);
+  test.done();
+};
+
+exports['A 15 year, $389,253 loan with a 5.3% interest rate should have a total interest of $175,831.99'] = function (test) {
+  test.equal(LoanCalc.totalInterest({amount: 389253, rate: 5.3, termMonths: 180}), 175831.99);
   test.done();
 };
 
