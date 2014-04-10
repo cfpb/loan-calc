@@ -26,6 +26,10 @@ var cleanOpts = function(opts) {
     throw new Error('Please specify a loan rate');
   }
 
+  if ( typeof opts.termMonths === 'undefined' || isNaN(parseFloat(opts.termMonths)) || opts.termMonths <= 0) {
+    throw new Error('Please specify the length of the term');
+  }
+
   return {
     amount: opts.amount,
     rate: opts.rate,
