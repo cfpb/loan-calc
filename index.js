@@ -1,4 +1,19 @@
 'use strict';
+// calculate the raw monthly payment
+// pass the total amount of the loan, the APR, and the length of the loan in months
+var paymentCalc = function(loanAmt, loanRate, loanTerm) {
+  // monthly interest rate
+  var monthlyRate = (loanRate/100)/12;
+
+  // calculate the monthly payment
+  // MonthlyPayment = Pincipal * ( MonthlyInterest / (1 - (1 + MonthlyInterest)^ -Months))
+  return loanAmt * (monthlyRate / (1 - Math.pow(1 + monthlyRate, -(loanTerm))));
+};
+
+// round numbers to two decimal places
+var roundNum = function(num) {
+  return num.toFixed(2);
+};
 
 // pass the amount of the loan, percentage rate, and length of the loan in months
 exports.paymentCalc = function(loanAmt, loanRate, loanTerm) {
@@ -19,17 +34,3 @@ exports.totalInterest = function(loanAmt, loanRate, loanTerm) {
   // round the value to two decimal places
   return roundNum(rawInterest);
 };
-
-// calculate the raw monthly payment
-var paymentCalc = function(loanAmt, loanRate, loanTerm) {
-  // monthly interest rate
-  var monthlyRate = (loanRate/100)/12;
-
-  // calculate the monthly payment
-  // MonthlyPayment = Pincipal * ( MonthlyInterest / (1 - (1 + MonthlyInterest)^ -Months))
-  return loanAmt * (monthlyRate / (1 - Math.pow(1 + monthlyRate, -(loanTerm))));
-};
-
-var roundNum = function(num) {
-  return num.toFixed(2);
-}
