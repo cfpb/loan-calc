@@ -1,15 +1,8 @@
 'use strict';
+
 // calculate the raw monthly payment
 // pass the total amount of the loan, the APR, and the length of the loan in months
 var paymentCalc = function(loanAmt, loanRate, loanTerm) {
-  // throw an error if an invalid value is passed
-  if(isNaN(parseFloat(loanAmt)) || loanAmt <= 0) {
-    throw new Error('Please specify a loan amount');
-  } else if (isNaN(parseFloat(loanRate)) || loanRate < 0) {
-    throw new Error('Please specify a loan rate');
-  } else if (isNaN(parseFloat(loanTerm)) || loanTerm <= 0) {
-    throw new Error('Please specify a loan term in months');
-  }
 
   // monthly interest rate
   var monthlyRate = (loanRate/100)/12;
@@ -24,21 +17,43 @@ var roundNum = function(num) {
   return Math.round(num * 100) / 100;
 };
 
+var cleanOpts = function(opts) {
+  if ( typeof opts.amount === 'undefined' || isNaN(parseFloat(opts.amount)) || opts.amount <= 0) {
+    throw new Error('Please specify a loan amount');
+  }
+
+  if ( typeof opts.rate === 'undefined' || isNaN(parseFloat(opts.rate)) || opts.rate < 0) {
+    throw new Error('Please specify a loan rate');
+  }
+
+  return {
+    amount: opts.amount,
+    rate: opts.rate,
+    termMonths: opts.termMonths || 360
+  };
+};
+
 // pass the amount of the loan, percentage rate, and length of the loan in months
-exports.paymentCalc = function(loanAmt, loanRate, loanTerm) {
+exports.paymentCalc = function(opts) {
+
+  opts = cleanOpts(opts);
+
   // calculate monthly payment
-  var monthlyPayment = paymentCalc(loanAmt, loanRate, loanTerm);
+  var monthlyPayment = paymentCalc(opts.amount, opts.rate, opts.termMonths);
 
   // round the payment to two decimal places
   return roundNum(monthlyPayment);
 };
 
-exports.totalInterest = function(loanAmt, loanRate, loanTerm) {
-  // calculate the momthly payment
-  var monthlyPayment = paymentCalc(loanAmt, loanRate, loanTerm);
+exports.totalInterest = function(opts) {
+
+  opts = cleanOpts(opts);
+
+  // calculate the monthly payment
+  var monthlyPayment = paymentCalc(opts.amount, opts.rate, opts.termMonths);
 
   // subtract the original loan amount from the total amount paid to get the raw interest paid
-  var rawInterest = (monthlyPayment * loanTerm) - loanAmt;
+  var rawInterest = (monthlyPayment * opts.termMonths) - opts.amount;
 
   // round the value to two decimal places
   return roundNum(rawInterest);
