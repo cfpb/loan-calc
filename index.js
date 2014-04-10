@@ -2,6 +2,15 @@
 // calculate the raw monthly payment
 // pass the total amount of the loan, the APR, and the length of the loan in months
 var paymentCalc = function(loanAmt, loanRate, loanTerm) {
+  // throw an error if an invalid value is passed
+  if(isNaN(parseFloat(loanAmt)) || loanAmt <= 0) {
+    throw new Error('Please specify a loan amount');
+  } else if (isNaN(parseFloat(loanRate)) || loanRate < 0) {
+    throw new Error('Please specify a loan rate');
+  } else if (isNaN(parseFloat(loanTerm)) || loanTerm <= 0) {
+    throw new Error('Please specify a loan term in months');
+  }
+
   // monthly interest rate
   var monthlyRate = (loanRate/100)/12;
 
