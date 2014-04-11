@@ -20,16 +20,25 @@ var LoanCalc = require('loan-calc');
 LoanCalc.paymentCalc({
     amount: 200000,
     rate: 5,
-    termMonths: 360
+    termMonths: 180
 });
-// returns 964.39
+// returns 1581.59
 
 LoanCalc.totalInterest({
     amount: 200000,
     rate: 5,
     termMonths: 360
 });
-// returns 262908.74
+// returns 186511.57
 ```
 
+You can also pass the loan amount as a US currency formatted string:
 
+```javascript
+LoanCalc.paymentCalc({
+    amount: $200,000,
+    rate: 5,
+    termMonths: 180
+});
+// returns 1581.59
+```
