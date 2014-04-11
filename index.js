@@ -18,10 +18,12 @@ var roundNum = function(num) {
 };
 
 var cleanOpts = function(opts) {
+  // clean up US currency formatted strings
   if (isNaN(opts.amount)) {
     opts.amount = parseFloat(opts.amount.replace(/[^0-9\.]+/g,''));
   }
 
+  // throw errors for strings and unsupported numerical values
   if (typeof opts.amount === 'undefined' || isNaN(parseFloat(opts.amount)) || opts.amount <= 0) {
     throw new Error('Please specify a loan amount as a positive number');
   }
