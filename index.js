@@ -8,7 +8,7 @@ var paymentCalc = function(loanAmt, loanRate, loanTerm) {
   var monthlyRate = (loanRate/100)/12;
 
   // calculate the monthly payment
-  // MonthlyPayment = Pincipal * ( MonthlyInterest / (1 - (1 + MonthlyInterest)^ -Months))
+  // MonthlyPayment = Principal * ( MonthlyInterest / (1 - (1 + MonthlyInterest)^ -Months))
   return loanAmt * (monthlyRate / (1 - Math.pow(1 + monthlyRate, -(loanTerm))));
 };
 
