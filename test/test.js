@@ -46,6 +46,14 @@ exports['Throw an error if a string is passed'] = function (test) {
   test.done();
 };
 
+exports['Throw an error if a string is passed even when it contains currency symbols'] = function (test) {
+  test.throws(function() {
+    LoanCalc.paymentCalc({amount: '$hello, friend', rate: 5, termMonths: 480});
+  },
+  Error, 'Please specify a loan amount as a positive number');
+  test.done();
+};
+
 exports['Throw an error if a negative value is passed'] = function (test) {
   test.throws(function() {
     LoanCalc.paymentCalc({amount: -300000, rate: 5, termMonths: 360});
