@@ -36,7 +36,7 @@ You can also pass the loan amount as a US currency formatted string:
 
 ```javascript
 LoanCalc.paymentCalc({
-    amount: $200,000,
+    amount: '$200,000',
     rate: 5,
     termMonths: 180
 });
