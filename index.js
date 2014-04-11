@@ -23,7 +23,7 @@ var cleanOpts = function(opts) {
     opts.amount = parseFloat(opts.amount.replace(/[^0-9\.]+/g,''));
   }
 
-  // throw errors for strings and unsupported numerical values
+  // throw errors for strings and unsupported numerical valuess
   if (typeof opts.amount === 'undefined' || isNaN(parseFloat(opts.amount)) || opts.amount <= 0) {
     throw new Error('Please specify a loan amount as a positive number');
   }
