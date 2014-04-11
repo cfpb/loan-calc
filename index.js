@@ -18,15 +18,19 @@ var roundNum = function(num) {
 };
 
 var cleanOpts = function(opts) {
-  if ( typeof opts.amount === 'undefined' || isNaN(parseFloat(opts.amount)) || opts.amount <= 0) {
+  if (isNaN(opts.amount)) {
+    opts.amount = parseFloat(opts.amount.replace(/[^0-9\.]+/g,''));
+  }
+
+  if (typeof opts.amount === 'undefined' || isNaN(parseFloat(opts.amount)) || opts.amount <= 0) {
     throw new Error('Please specify a loan amount as a positive number');
   }
 
-  if ( typeof opts.rate === 'undefined' || isNaN(parseFloat(opts.rate)) || opts.rate < 0) {
+  if (typeof opts.rate === 'undefined' || isNaN(parseFloat(opts.rate)) || opts.rate < 0) {
     throw new Error('Please specify a loan rate as a number');
   }
 
-  if ( typeof opts.termMonths === 'undefined' || isNaN(parseFloat(opts.termMonths)) || opts.termMonths <= 0) {
+  if (typeof opts.termMonths === 'undefined' || isNaN(parseFloat(opts.termMonths)) || opts.termMonths <= 0) {
     throw new Error('Please specify the length of the term as a positive number');
   }
 

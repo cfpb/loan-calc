@@ -32,6 +32,11 @@ exports['A 15 year, $389,253 loan with a 5.3% interest rate should have a total 
   test.done();
 };
 
+exports['Accept a loan ammount in US currency format'] = function (test) {
+  test.equal(LoanCalc.totalInterest({amount: '$200,000', rate: 5, termMonths: 480}), 262908.74);
+  test.done();
+};
+
 // error checks
 exports['Throw an error if a string is passed'] = function (test) {
   test.throws(function() {
