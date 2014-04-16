@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/ascott1/loan-calc.svg?branch=master)](https://travis-ci.org/ascott1/loan-calc)
+[![Build Status](https://travis-ci.org/cfpb/loan-calc.svg?branch=master)](https://travis-ci.org/cfpb/loan-calc)
 
 Quickly calculate monthly payments and the total amount of interest paid for a fixed rate loan.
 
