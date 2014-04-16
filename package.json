@@ -1,6 +1,6 @@
 {
   "name": "loan-calc",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "description": "Calculate monthly loan payments",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/ascott1/loan-calc.git"
+    "url": "git://github.com/cfpb/loan-calc.git"
   },
   "keywords": [
     "money",
@@ -19,7 +19,7 @@
   "author": "Adam Scott",
   "license": "Public Domain",
   "bugs": {
-    "url": "https://github.com/ascott1/loan-calc/issues"
+    "url": "https://github.com/cfpb/loan-calc/issues"
   },
   "devDependencies": {
     "nodeunit": "~0.8.6"
