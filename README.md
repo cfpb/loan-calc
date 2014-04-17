@@ -42,3 +42,21 @@ LoanCalc.paymentCalc({
 });
 // returns 1581.59
 ```
+
+## Contributing
+
+Please read the [Contributing guidelines](CONTRIBUTING.md).
+
+### Running Tests
+
+We are using [nodeunit](https://github.com/caolan/nodeunit) to test. To run tests, first install dev dependencies via npm:
+
+```
+npm install
+```
+
+Run tests with:
+
+```
+npm test
+```
