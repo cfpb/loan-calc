@@ -49,7 +49,7 @@ Please read the [Contributing guidelines](CONTRIBUTING.md).
 
 ### Running Tests
 
-We are using [nodeunit](https://github.com/caolan/nodeunit) to test. To run tests, first install dev dependencies via npm:
+We are using [nodeunit](https://github.com/caolan/nodeunit) to test. To run tests, first install nodeunit and any dependencies via npm:
 
 ```
 npm install
